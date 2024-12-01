@@ -1,71 +1,46 @@
-iOSアプリをSwiftUIで開発し、アプリ内でMapboxの地図を使用するための基本的な導入手順をご紹介します。
+### iOSアプリにMapboxを導入する手順
 
-## 1. Mapboxアカウントの作成とアクセストークンの取得
+---
 
-Mapboxのサービスを利用するには、アクセストークンが必要です。
+#### 1. Mapboxアカウントの作成とトークンの設定
 
-- [Mapboxの公式サイト](https://www.mapbox.com/)でアカウントを作成します。
-- ログイン後、アカウントページの「Access Tokens」セクションでデフォルトのパブリックトークンを確認できます。
-- 必要に応じて、新しいトークンを作成し、適切なスコープ（例：`styles:read`、`styles:tiles`）を設定します。 
+1. [Mapboxアカウントページ](https://account.mapbox.com)でアカウントを作成またはログインする。
+2. ログイン後、提供されるデフォルトのパブリックアクセストークンを取得する。
+3. Xcodeで`Info.plist`を開き、`MBXAccessToken`というキーを追加し、値として取得したトークンを設定する。
 
-## 2. XcodeプロジェクトへのMapbox SDKの導入
+---
 
-Mapbox Maps SDK for iOSをプロジェクトに追加する方法はいくつかありますが、ここではSwift Package Managerを使用する手順を説明します。
+#### 2. Mapbox Maps SDKのインストール
 
-- Xcodeでプロジェクトを開き、メニューバーから **File > Add Packages...** を選択します。
-- 検索バーに以下のURLを入力します：`https://github.com/mapbox/mapbox-maps-ios.git`
-- 表示されるバージョン選択画面で、適切なバージョンを選択し、プロジェクトのターゲットを指定して「Add Package」をクリックします。
+##### Swift Package Managerを使用する場合:
 
-## 3. アクセストークンのプロジェクトへの設定
+1. Xcodeでプロジェクトを開き、`File` > `Add Packages...`を選択。
+2. 検索バーに`https://github.com/mapbox/mapbox-maps-ios.git`を入力。
+3. "Dependency Rule"として"Up to Next Major Version"を選択し、最小バージョンを`11.0.0`に設定。
+4. `Add Package`をクリックし、`MapboxMaps`を選択して追加。
+5. プロジェクトのターゲット設定で`Frameworks, Libraries, and Embedded Content`に`MapboxMaps`を追加。
 
-取得したアクセストークンをプロジェクト内で使用できるように設定します。
+---
 
-- プロジェクトの `Info.plist` ファイルを開き、新しいキー `MBXAccessToken` を追加し、値として取得したアクセストークンを設定します。 
+#### 3. マップの表示
 
-## 4. SwiftUIでのMapbox地図の表示
-
-SwiftUIでMapboxの地図を表示するには、`UIViewRepresentable` を使用して UIKit の `MapView` をラップする必要があります。
-
-以下はその実装例です：
+以下はSwiftUIを使った例:
 
 ```swift
 import SwiftUI
 import MapboxMaps
 
-struct MapboxView: UIViewRepresentable {
-    func makeUIView(context: Context) -> MapView {
-        // アクセストークンの取得
-        let accessToken = Bundle.main.object(forInfoDictionaryKey: "MBXAccessToken") as? String ?? ""
-        // リソースオプションの設定
-        let resourceOptions = ResourceOptions(accessToken: accessToken)
-        // マップの初期設定
-        let mapInitOptions = MapInitOptions(resourceOptions: resourceOptions)
-        // MapViewの作成
-        let mapView = MapView(frame: .zero, mapInitOptions: mapInitOptions)
-        return mapView
-    }
-
-    func updateUIView(_ uiView: MapView, context: Context) {
-        // 必要に応じてMapViewを更新
-    }
-}
-```
-
-この `MapboxView` をSwiftUIのビュー階層内で使用することで、地図を表示できます。
-
-```swift
 struct ContentView: View {
     var body: some View {
-        MapboxView()
-            .edgesIgnoringSafeArea(.all) // 必要に応じて地図を全画面表示
+        let center = CLLocationCoordinate2D(latitude: 39.5, longitude: -98.0)
+        Map(initialViewport: .camera(center: center, zoom: 2, bearing: 0, pitch: 0))
+            .ignoresSafeArea()
     }
 }
 ```
 
-## 参考文献
+指定した座標を中心にマップを表示する。これで基本的なマップの表示ができる。
 
-- 
-- 
-- 
+---
 
-これらの手順に従うことで、SwiftUIを使用したiOSアプリ内でMapboxの地図を表示する基本的な設定が完了します。 
+詳細や他のインストール方法は[Mapbox公式ドキュメント](https://docs.mapbox.com/ios/maps/guides/install/)を参照。
