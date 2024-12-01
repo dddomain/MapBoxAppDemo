@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		E6F4E8682CFC95F4001A17BA /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = E6F4E8672CFC95F4001A17BA /* MapboxMaps */; };
+		E6F4E86A2CFC976E001A17BA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E6F4E8692CFC976E001A17BA /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E6F4E8552CFC92E7001A17BA /* MapBoxApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapBoxApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6F4E8692CFC976E001A17BA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -37,6 +39,7 @@
 		E6F4E84C2CFC92E7001A17BA = {
 			isa = PBXGroup;
 			children = (
+				E6F4E8692CFC976E001A17BA /* README.md */,
 				E6F4E8572CFC92E7001A17BA /* MapBoxApp */,
 				E6F4E8562CFC92E7001A17BA /* Products */,
 			);
@@ -118,6 +121,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6F4E86A2CFC976E001A17BA /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
