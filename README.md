@@ -1,6 +1,6 @@
 ### iOSアプリにMapboxを導入する手順
 
-![screenshot](https://github.com/dddomain/MapBoxAppDemo/blob/main/MapBoxApp/Assets.xcassets/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20Max%20-%202024-12-01%20at%2022.35.16.imageset/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20Max%20-%202024-12-01%20at%2022.35.16.png)
+<img src="https://github.com/dddomain/MapBoxAppDemo/blob/main/MapBoxApp/Assets.xcassets/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20Max%20-%202024-12-01%20at%2022.35.16.imageset/Simulator%20Screenshot%20-%20iPhone%2016%20Pro%20Max%20-%202024-12-01%20at%2022.35.16.png" alt="screenshot" width="300">
 
 ---
 
