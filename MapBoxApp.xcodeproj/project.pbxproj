@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		E6F4E8682CFC95F4001A17BA /* MapboxMaps in Frameworks */ = {isa = PBXBuildFile; productRef = E6F4E8672CFC95F4001A17BA /* MapboxMaps */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		E6F4E8552CFC92E7001A17BA /* MapBoxApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapBoxApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +27,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6F4E8682CFC95F4001A17BA /* MapboxMaps in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +70,7 @@
 			);
 			name = MapBoxApp;
 			packageProductDependencies = (
+				E6F4E8672CFC95F4001A17BA /* MapboxMaps */,
 			);
 			productName = MapBoxApp;
 			productReference = E6F4E8552CFC92E7001A17BA /* MapBoxApp.app */;
@@ -94,6 +100,9 @@
 			);
 			mainGroup = E6F4E84C2CFC92E7001A17BA;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E6F4E8662CFC95F4001A17BA /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = E6F4E8562CFC92E7001A17BA /* Products */;
 			projectDirPath = "";
@@ -324,6 +333,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E6F4E8662CFC95F4001A17BA /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mapbox/mapbox-maps-ios.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E6F4E8672CFC95F4001A17BA /* MapboxMaps */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6F4E8662CFC95F4001A17BA /* XCRemoteSwiftPackageReference "mapbox-maps-ios" */;
+			productName = MapboxMaps;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E6F4E84D2CFC92E7001A17BA /* Project object */;
 }
